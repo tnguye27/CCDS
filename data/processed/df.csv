@@ -1,4 +1,4 @@
-name,year,poverty-rate,median-household-income,rent-burden,pct-white,households-threatened,eviction-filing-rate,grand total
+name,year,poverty-rate,median-household-income,rent-burden,pct-white,households-threatened,eviction-filing-rate,total-crime
 Baltimore City,2000,22.92,30078,26.9,30.96,58207.75,124.17,66791
 Baltimore City,2001,22.92,30078,26.9,30.96,52564.67,111.08,64453
 Baltimore City,2002,22.92,30078,26.9,30.96,57183.58,121.05,56550
