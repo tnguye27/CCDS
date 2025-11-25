@@ -48,3 +48,37 @@ The analysis follows the Quantitative Social Science Research (QSSR) track struc
 - Add interaction terms between socioeconomic variables and metropolitan status.
 - Cluster standard errors at the county level to account for within-county correlation.
 - Conduct diagnostics for multicollinearity, heteroskedasticity, and serial correlation.
+
+## Progress Summary (Sprint 3)
+
+Sprint 3 focused on building, evaluating, and interpreting fixed-effects regression models to understand how socioeconomic factors relate to eviction filing rates across Maryland counties from 2000–2018.
+
+### Model Development
+Created log-transformed variables for income, poverty, crime, and eviction filing rate to stabilize variance and improve interpretability.
+Constructed a two-way fixed effects (county and year) regression model to control for unmeasured jurisdiction and year effects.
+Added a poverty × metropolitan interaction term to test whether socioeconomic effects differ between metropolitan and non-metropolitan jurisdictions.
+Implemented cluster-robust standard errors at the jurisdiction level to correct for heteroskedasticity and within-jurisdiction serial correlation.
+
+### Key Findings
+Crime rate (log_crime) is consistently a strong, statistically significant predictor of higher eviction filing rates.
+Percent white is also statistically significant, with higher white population share associated with lower eviction activity.
+Poverty, income, and rent burden are not statistically significant once fixed effects are included.
+The poverty × metropolitan interaction is not significant, indicating that poverty’s effect on evictions does not meaningfully differ between metropolitan and non-metropolitan jurisdictions in this dataset.
+Model fit is extremely high (R² ≈ 0.976), and coefficients are stable across specifications, suggesting robust associations but not causal effects.
+
+### Model Diagnostics & Validation
+Conducted assumption checks:
+Linearity: relationships appear approximately linear when visualized using scatterplots and smoothing lines.
+Normality: residuals show mild skew but approximate normality.
+Heteroskedasticity: mitigated through clustered standard errors.
+Independence: FE + clustering address within-cluster correlation.
+Checked multicollinearity using Pearson correlations and VIF:
+log_income and log_poverty show high correlation (–0.81), reducing interpretability of individual coefficients.
+
+### Interpretation & Limitations
+Models show strong associations, not causal effects.
+Internal validity limited by:
+Unmeasured confounders (landlord behavior, court efficiency, housing market tightness)
+Potential measurement error in crime and poverty data
+Possible reverse causality between crime, poverty, and evictions
+External validity is limited to Maryland counties during 2000–2018.
